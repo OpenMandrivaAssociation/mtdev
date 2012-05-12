@@ -4,7 +4,7 @@
  
 Name:           mtdev
 Version:        1.1.2
-Release:        1
+Release:        2
 License:        MIT
 Summary:        Kernel multi-touch transformation library
 Url:            http://edge.launchpad.net/mtdev
@@ -56,21 +56,14 @@ This package provides the development files for mtdev.
 %makeinstall_std
 find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
-%clean
-rm -rf %{buildroot}
- 
 %files
-%defattr(-,root,root)
 %doc ChangeLog README COPYING
 %{_bindir}/mtdev-test
  
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
  
 %files -n %{develname}
-%defattr(-,root,root)
 %{_includedir}/mtdev*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
- 
