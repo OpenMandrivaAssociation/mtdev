@@ -3,13 +3,13 @@
 %define develname %mklibname %{name} -d
  
 Name:           mtdev
-Version:        1.1.2
-Release:        2
+Version:        1.1.3
+Release:        1
 License:        MIT
 Summary:        Kernel multi-touch transformation library
 Url:            http://edge.launchpad.net/mtdev
 Group:          System/Libraries
-Source0:        https://launchpad.net/mtdev/trunk/1.1.2/+download/%{name}-%{version}.tar.gz
+Source0:        https://launchpad.net/mtdev/trunk/1.1.3/+download/%{name}-%{version}.tar.gz
  
 %description
 The mtdev library transforms all variants of kernel MT (multi-touch) events to
