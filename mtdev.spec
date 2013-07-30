@@ -1,15 +1,15 @@
 %define major	1
 %define libname %mklibname %{name} %{major}
-%define develname %mklibname %{name} -d
+%define devname %mklibname %{name} -d
  
-Name:           mtdev
-Version:        1.1.3
-Release:        %mkrel 1
-License:        MIT
-Summary:        Kernel multi-touch transformation library
-Url:            http://edge.launchpad.net/mtdev
-Group:          System/Libraries
-Source0:        https://launchpad.net/mtdev/trunk/1.1.3/+download/%{name}-%{version}.tar.gz
+Summary:	Kernel multi-touch transformation library
+Name:		mtdev
+Version:	1.1.3
+Release:	1
+License:	MIT
+Group:		System/Libraries
+Url:		http://edge.launchpad.net/mtdev
+Source0:	https://launchpad.net/mtdev/trunk/1.1.3/+download/%{name}-%{version}.tar.gz
  
 %description
 The mtdev library transforms all variants of kernel MT (multi-touch) events to
@@ -19,29 +19,19 @@ tracking, or type B with contact tracking. See the kernel documentation for
 further details.
  
 %package -n %{libname}
-Summary:        Kernel multi-touch transformation library
-Group:          System/Libraries
+Summary:	Kernel multi-touch transformation library
+Group:		System/Libraries
  
 %description -n %{libname}
-The mtdev library transforms all variants of kernel MT (multi-touch) events to
-the slotted type B protocol. The events put into mtdev may be from any MT
-device, specifically type A without contact tracking, type A with contact
-tracking, or type B with contact tracking. See the kernel documentation for
-further details.
+This package contains the shared library for %{name}.
  
-%package -n %{develname}
-Summary:        Development files for mtdev
-Group:          Development/C
-Requires:       %{libname} = %{version}-%{release}
-Provides:		%{name}-devel = %{version}-%{release}
+%package -n %{devname}
+Summary:	Development files for mtdev
+Group:		Development/C
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
  
-%description -n %{develname}
-The mtdev library transforms all variants of kernel MT (multi-touch) events to
-the slotted type B protocol. The events put into mtdev may be from any MT
-device, specifically type A without contact tracking, type A with contact
-tracking, or type B with contact tracking. See the kernel documentation for
-further details.
- 
+%description -n %{devname}
 This package provides the development files for mtdev.
  
 %prep
@@ -49,21 +39,21 @@ This package provides the development files for mtdev.
  
 %build
 %configure2_5x \
-  --disable-static
+	--disable-static
 %make
  
 %install
 %makeinstall_std
-find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files
 %doc ChangeLog README COPYING
 %{_bindir}/mtdev-test
  
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/libmtdev.so.%{major}*
  
-%files -n %{develname}
+%files -n %{devname}
 %{_includedir}/mtdev*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
+
