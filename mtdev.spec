@@ -35,16 +35,16 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package provides the development files for mtdev.
  
 %prep
-%setup -q
+%autosetup -p1
  
 %build
-%configure2_5x \
+%configure \
 	--disable-static
-%make
+%make_build
  
 %install
-%makeinstall_std
- 
+%make_install
+
 %files
 %doc ChangeLog README COPYING
 %{_bindir}/mtdev-test
