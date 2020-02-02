@@ -4,8 +4,8 @@
  
 Summary:	Kernel multi-touch transformation library
 Name:		mtdev
-Version:	1.1.5
-Release:	9
+Version:	1.1.6
+Release:	1
 License:	MIT
 Group:		System/Libraries
 Url:		http://edge.launchpad.net/mtdev
