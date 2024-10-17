@@ -9,7 +9,7 @@ Version:	1.1.6
 Release:	4
 License:	MIT
 Group:		System/Libraries
-Url:		http://edge.launchpad.net/mtdev
+Url:		https://edge.launchpad.net/mtdev
 Source0:	https://launchpad.net/mtdev/trunk/%{version}/+download/%{name}-%{version}.tar.gz
  
 %description
