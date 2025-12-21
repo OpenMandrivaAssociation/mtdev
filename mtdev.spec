@@ -12,6 +12,11 @@ Group:		System/Libraries
 Url:		https://edge.launchpad.net/mtdev
 Source0:	https://launchpad.net/mtdev/trunk/%{version}/+download/%{name}-%{version}.tar.gz
  
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The mtdev library transforms all variants of kernel MT (multi-touch) events to
 the slotted type B protocol. The events put into mtdev may be from any MT
