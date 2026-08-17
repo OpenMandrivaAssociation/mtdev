@@ -6,7 +6,7 @@
 Summary:	Kernel multi-touch transformation library
 Name:		mtdev
 Version:	1.1.7
-Release:	1
+Release:	2
 License:	MIT
 Group:		System/Libraries
 Url:		https://edge.launchpad.net/mtdev
@@ -46,10 +46,12 @@ This package provides the development files for mtdev.
 %build
 %configure \
 	--disable-static
-%make_build
+%make_build LIBTOOL=slibtool
 
 %install
-%make_install
+%make_install LIBTOOL=slibtool
+# slibtool also installs an export-symbols archive as .a
+rm -f %{buildroot}%{_libdir}/libmtdev.a
 
 %files
 %doc ChangeLog README COPYING
